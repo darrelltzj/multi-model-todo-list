@@ -12,7 +12,7 @@
       <% } else if (todoItem.completed == false) { %>
         <span class="label label-danger">False</span>
       <% } %>
-      <a class="pull-right" href=<%= "/todo/" + todoItem._id %>>View</a>
+      <a class="pull-right" href=<%= "/todos/" + todoItem._id %>>View</a>
     </li>
   <% }) %>
 </ul>

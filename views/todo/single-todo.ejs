@@ -13,7 +13,7 @@
           <% } %>
         </h4>
 
-        <a class="btn btn-warning" href=<%= "/todo/" + todoItem._id + "/edit" %>>Edit</a>
+        <a class="btn btn-warning" href=<%= "/todos/" + todoItem._id + "/edit" %>>Edit</a>
 
         <form class="deleteForm "method="POST" action=<%= "/todo/" + todoItem._id + "?_method=DELETE" %>>
           <button type="submit" class="btn btn-danger">Delete</button>

@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="page-header">Todo groups</h1>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h3><strong><%= item.name %>: </strong></h3>
+        <h4><%= item.color %></h4>
+        <h4>todos:
+        </h4>
+
+        <a class="btn btn-warning" href=<%= "/todosgroups/" + item._id + "/edit" %>>Edit</a>
+
+        <form class="deleteForm "method="POST" action=<%= "/todo/" + item._id + "?_method=DELETE" %>>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+
+      </li>
+    </ul>
+
+</div>

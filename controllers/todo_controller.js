@@ -27,7 +27,7 @@ let todosController = {
     })
     newTodo.save(function (err, savedEntry) {
       if (err) throw err
-      res.redirect('/todo')
+      res.redirect('/todos')
     })
   },
 
@@ -47,14 +47,14 @@ let todosController = {
       completed: req.body.completed
     }, (err, todoItem) => {
       if (err) throw err
-      res.redirect('/todo/' + todoItem.id)
+      res.redirect('/todos/' + todoItem.id)
     })
   },
 
   delete: (req, res) => {
     Todo.findByIdAndRemove(req.params.id, (err, todoItem) => {
       if (err) throw err
-      res.redirect('/todo')
+      res.redirect('/todos')
     })
   }
 

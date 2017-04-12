@@ -27,6 +27,9 @@ app.use('/', pagesRouter)
 // const todoRouter = require('./routes/todo_router')
 app.use('/todos', todo)
 
+const todogroupRouter = require('./routes/todogroup_router')
+app.use('/todogroups', todogroupRouter)
+
 // app.get('/', (req, res) => {
 //   res.send('Vell, vell, vell. Vellcome to my app.')
 // })
