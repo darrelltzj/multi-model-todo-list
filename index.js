@@ -7,7 +7,7 @@ const todo = require('./routes/todo_router')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 
-// mongoose.connect('mongodb://localhost/myapp')
+mongoose.connect('mongodb://localhost/myapp')
 
 mongoose.Promise = global.Promise
 
@@ -21,11 +21,15 @@ app.use(ejsLayouts)
 
 app.set('view engine', 'ejs')
 
-// app.use('/todo', todo)
+const pagesRouter = require('./routes/pages_router')
+app.use('/', pagesRouter)
 
-app.get('/', (req, res) => {
-  res.send('Vell, vell, vell. Vellcome to my app.')
-})
+// const todoRouter = require('./routes/todo_router')
+app.use('/todos', todo)
+
+// app.get('/', (req, res) => {
+//   res.send('Vell, vell, vell. Vellcome to my app.')
+// })
 
 // app.listen(3000)
 app.listen(process.env.PORT || 3000, function () {
